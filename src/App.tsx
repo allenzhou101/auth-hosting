@@ -94,7 +94,9 @@ const App = () => {
 		flowId === 'saml-config' ||
 		flowId === 'sso-config';
 
-	const containerClasses = clsx('descope-base-container', {
+	const hasContainerBoxShadow =
+		urlParams.get('shadow') !== 'false';
+	const containerClasses = clsx(hasContainerBoxShadow && 'descope-base-container', {
 		'descope-wide-container': isWideContainer,
 		'descope-login-container': !isWideContainer
 	});
